@@ -22,6 +22,20 @@ public class UI extends PApplet
 	// Create an arraylist to store colour objects
 	ArrayList<Colour> colours = new ArrayList<Colour>();
 
+	// Create an arraylist to store resistor objects
+	ArrayList<Resistor> resistors = new ArrayList<Resistor>();
+	
+
+	// Load the resistor values into the arraylist
+	public void loadResistors() 
+	{
+		Table table = loadTable("resistors.csv");
+		for(TableRow row:table.rows())
+		{
+			resistors.add(new Resistor(row));
+		}
+	}
+
 	// Load the colours into the arraylist
 	public void loadColours()
 	{
@@ -74,6 +88,16 @@ public class UI extends PApplet
 	
 	public void draw()
 	{	
-	
+		background(0);
+		fill(255);
+		
+		// Loop and draw the resistors 
+		for(int i = 0; i < resistors.size(); i++) {
+			// Create rectangles and change the x and y position using map function
+			// rect()
+			// Add line function next to each rect tangle
+			// map function can be used
+			// resistors.get(i).value for the value etc
+		}
 	}
 }
