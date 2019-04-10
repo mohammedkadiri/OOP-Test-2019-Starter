@@ -41,6 +41,21 @@ public class UI extends PApplet
 		}	
 	}
 
+	public Colour findColor(int value) {
+		int pos = 0;
+		
+		for(int i = 0; i < colours.size(); i++)
+		{
+			if(colours.get(i).value == value) 
+			{
+				pos = i;
+			}
+		}
+
+		return colours.get(pos);
+	}
+
+
 	public void settings()
 	{
 		size(500, 800);
@@ -50,6 +65,7 @@ public class UI extends PApplet
 		separate(92);
 		loadColours();
 		printColours();
+		System.out.println(findColor(9));
 	}
 
 	public void setup() 
