@@ -1,5 +1,7 @@
 package ie.tudublin;
 
+import processing.data.*;
+
 public class Resistor {
 
     public int value, ones, tens, hundreds;
@@ -12,6 +14,10 @@ public class Resistor {
         this.ones  = value - ((hundreds * 100)  + (tens * 10));
     }
 
+    public Resistor(TableRow tr) 
+    {
+      this(tr.getInt("res"));
+    }
 
     
 }
